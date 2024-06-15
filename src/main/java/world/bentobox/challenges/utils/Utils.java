@@ -566,7 +566,12 @@ public class Utils
 		{
 			return "";
 		}
-
+		// Get ItemMeta
+		ItemMeta meta = object.getItemMeta();
+		if (meta != null && meta.hasDisplayName()) {
+			// Return the display name if it is set
+			return meta.getDisplayName();
+		}
 		// Find addon structure with:
 		// [addon]:
 		//   item-stacks:
